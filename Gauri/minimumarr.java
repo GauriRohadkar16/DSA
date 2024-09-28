@@ -14,13 +14,29 @@ public class minimumarr {
             arr[i] = sc.nextInt();
         }
 
-        int temp = arr[0];
+        // int temp = arr[0];
 
-        for(int i= 0; i<n; i++){
-            if (arr[i]<temp){
-               temp = arr[i]; 
+        // for(int i= 0; i<n; i++){
+        //     if (arr[i]<temp){
+        //        temp = arr[i]; 
+        //     }
+        // }
+        // System.out.println("The minimum value is: "+ temp);
+
+        int largest = 0;
+        int slargest = -1;
+
+        for (int i = 0 ; i< n ; i++){
+            if (arr[i] > largest){
+                slargest = largest ;
+                largest = arr[i];
             }
+
+            else if (arr[i] < largest && arr[i] > slargest){
+                slargest = arr[ i];
+            }
+
         }
-        System.out.println("The minimum value is: "+ temp);
+         System.out.println("The second maximum value is: "+ slargest);
     }
 }
